@@ -104,3 +104,28 @@ small{
   border: 2rem solid red;
   width: 100px;
 } */
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .input-container{
+  flex-direction: column;
+  /* margin: 4rem; */
+  }
+  body{
+    font-size: 2px;
+  }
+  .container {
+  /* height: 100vh; */
+    margin-top: 4rem;
+
+  }
+  .input-container form{
+    width;
+  }
+}
