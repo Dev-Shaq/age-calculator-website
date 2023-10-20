@@ -1,21 +1,26 @@
+// For Input
+const inputDay = document.querySelector(".day");
+const inputMonth = document.querySelector(".month");
+const inputYear = document.querySelector(".year");
+let isValid = false
+
+
+
+
+
+
 // For Output
 const outputYear = document.querySelector('.output-year');
 const outputMonth = document.querySelector('.output-month');
 const outputDay = document.querySelector('.output-day');
-// for button
-const submitBtn = document.querySelector('.submit-btn');
-submitBtn.addEventListener('click', calculateDate);
 
-// For Input
-const inputYear = document.querySelector('.year');
-const inputMonth = document.querySelector('.month');
-const inputDay = document.querySelector(".day");
-let isValid = false
 
 // For the error
 const errorYear= document.querySelector('.error-year');
 const errorMonth= document.querySelector('.error-month');
 const errorDay= document.querySelector(".error-day");
+
+
 
 // adding event listener for day input
 inputDay.addEventListener('input', function (){
@@ -36,6 +41,7 @@ inputDay.addEventListener('input', function (){
     
  }
 });
+
 
 // adding event listener for month input
 inputMonth.addEventListener('input', function (){
@@ -77,46 +83,40 @@ inputYear.addEventListener('input', function (){
  }
 });
 
-// adding event listener on button
-// function calculateDate(){
-//    if (isValid) {
-//     let birthDay = '${inputMonth.value}/${inputDay.value}/${inputYear.value}';
-//     console.log(birthDay);
-//     let birthdayObj = new Date(birthDay);
-//     let ageDiffMill = Date.now() - birthdayObj;
-// let ageDate= new Date(ageDiffMill);
-// let ageYear=ageDate.getUTCFullYear()-1970;
-// let ageMonth = ageDate.getUTCMonth();
-// let ageDay = ageDate.getUTCDay();
-
-// outputDay.textContent = ageDay;
-// outputMonth.textContent= ageMonth;
-// outputYear.textContent= ageDay;
-// }
-//  else {
-//     alert('please fill form')
-//    } 
-// }
 
 
-// function calculateAge() {
-//    // Get input values
-//    let inputDay = document.querySelector('.day').value;
-//    let inputMonth = document.querySelector('.month').value;
-//    let inputYear = document.querySelector('.year').value;
 
-//    // Convert to Date object
-//    let birthDate = new Date(`${inputYear}-${inputMonth}-${inputDay}`);
 
-//    // Calculate age
-//    let today = new Date();
-//    let ageDate = new Date(today - birthDate);
-//    let ageYears = ageDate.getUTCFullYear() - 1970;
-//    let ageMonths = ageDate.getUTCMonth();
-//    let ageDays = ageDate.getUTCDate() - 1; // Correcting for day calculation
+function calculateDate () {
+    if (isValid) {
+      const birthDay = new Date(
+        `${inputYear.value}-${inputMonth.value}-${inputDay.value}`
+      );
+      const today = new Date();
+  
+      // Calculate the difference in milliseconds
+      const ageDiffMill = today - birthDay;
+  
+      // date object with the age difference
+      const ageDate = new Date(ageDiffMill);
+  
+      const ageYears = ageDate.getUTCFullYear() - 1970;
+      const ageMonths = ageDate.getUTCMonth();
+      const ageDays = ageDate.getUTCDate() - 1; // Correcting for day calculation
+  
+      //  calculated age
+      outputYear.textContent = ageYears;
+      outputMonth.textContent = ageMonths;
+      outputDay.textContent = ageDays;
+    } else {
+      alert('Please fill in the form');
+    }
+  }
 
-//    // Display the calculated age
-//    document.querySelector('.output-year').textContent = ageYears;
-//    document.querySelector('.output-month').textContent = ageMonths;
-//    document.querySelector('.output-day').textContent = ageDays;
-// }
+
+
+
+
+
+
+  
