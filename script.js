@@ -3,8 +3,8 @@ const outputYear = document.querySelector('.output-year');
 const outputMonth = document.querySelector('.output-month');
 const outputDay = document.querySelector('.output-day');
 // for button
-const submitBtn = document.querySelector('submit-btn');
-// submitBtn.addEventListener('click', CalculateDate);
+const submitBtn = document.querySelector('.submit-btn');
+submitBtn.addEventListener('click', calculateDate);
 
 // For Input
 const inputYear = document.querySelector('.year');
@@ -35,7 +35,7 @@ inputDay.addEventListener('input', function (){
     errorDay.textContent=''
     
  }
-})
+});
 
 // adding event listener for month input
 inputMonth.addEventListener('input', function (){
@@ -55,7 +55,7 @@ inputMonth.addEventListener('input', function (){
     errorMonth.textContent=''
     
  }
-})
+});
 
 // adding event listener for year input
 inputYear.addEventListener('input', function (){
@@ -75,9 +75,48 @@ inputYear.addEventListener('input', function (){
     errorYear.textContent=''
     
  }
-})
+});
 
 // adding event listener on button
-function CalculateDate(){
-    
-}
+// function calculateDate(){
+//    if (isValid) {
+//     let birthDay = '${inputMonth.value}/${inputDay.value}/${inputYear.value}';
+//     console.log(birthDay);
+//     let birthdayObj = new Date(birthDay);
+//     let ageDiffMill = Date.now() - birthdayObj;
+// let ageDate= new Date(ageDiffMill);
+// let ageYear=ageDate.getUTCFullYear()-1970;
+// let ageMonth = ageDate.getUTCMonth();
+// let ageDay = ageDate.getUTCDay();
+
+// outputDay.textContent = ageDay;
+// outputMonth.textContent= ageMonth;
+// outputYear.textContent= ageDay;
+// }
+//  else {
+//     alert('please fill form')
+//    } 
+// }
+
+
+// function calculateAge() {
+//    // Get input values
+//    let inputDay = document.querySelector('.day').value;
+//    let inputMonth = document.querySelector('.month').value;
+//    let inputYear = document.querySelector('.year').value;
+
+//    // Convert to Date object
+//    let birthDate = new Date(`${inputYear}-${inputMonth}-${inputDay}`);
+
+//    // Calculate age
+//    let today = new Date();
+//    let ageDate = new Date(today - birthDate);
+//    let ageYears = ageDate.getUTCFullYear() - 1970;
+//    let ageMonths = ageDate.getUTCMonth();
+//    let ageDays = ageDate.getUTCDate() - 1; // Correcting for day calculation
+
+//    // Display the calculated age
+//    document.querySelector('.output-year').textContent = ageYears;
+//    document.querySelector('.output-month').textContent = ageMonths;
+//    document.querySelector('.output-day').textContent = ageDays;
+// }
